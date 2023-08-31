@@ -35,7 +35,7 @@ medium.density(H_1+1:H_1+round(Geometry.cuvette_length/Model.dx), 1:round(Geomet
 
 
 % create initial pressure distribution.
-source.p0 =creatinitialpressure(Model, Medium, Geometry);%divergent Beam
+source.p0 =creatinitialpressure_DB(Model, Medium, Geometry);%divergent Beam
 
 % define a sensor mask
 sensor.mask=zeros(Model.Nx,Model.Ny);
