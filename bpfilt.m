@@ -71,17 +71,15 @@ end
 signal 	 = signal-mean(signal);
 spektrum = fftshift(fft(signal))/N;
 if isplot
-    figure;
-    subplot(2,1,1);
-    plot(f,abs(spektrum));
-    title('Power spectrum of the original signal');
+    figure(100);
+    plot(f,abs(spektrum),'b');
+    hold on
 end
 %% Power spectrum of the band-pass filtered signal
 spektrum = BPF.*spektrum;
 if isplot
-    subplot(2,1,2);
-    plot(f,abs(spektrum));
-    title(sprintf('Power spectrum of the band-pass filtered signal in (%.3f, %.3f) Hz',f1,f2));
+    plot(f,abs(spektrum),'r');
+    legend('Power spectrum of the original signal',sprintf('Power spectrum of the band-pass filtered signal in (%.3f, %.3f) Hz',f1,f2));
 end
 %% The band-pass filtered time series
 y = ifft(ifftshift(spektrum)); %inverse ifft

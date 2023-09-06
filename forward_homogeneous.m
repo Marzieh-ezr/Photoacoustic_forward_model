@@ -12,7 +12,7 @@ global medium;
 
 
 kgrid = kWaveGrid(Model.Nx, Model.dx, Model.Ny, Model.dy);
-kgrid.t_array=0:1/Model.sample_rate_model:50e-6;
+kgrid.t_array=0:1/Model.sample_rate_model:40e-6;
 
 
 
@@ -43,7 +43,7 @@ sensor.mask=zeros(Model.Nx,Model.Ny);
 sensor.mask(H_4+round((Geometry.distance/Model.dx)):...
 H_4+round(((Geometry.distance+Geometry.sensor_thikness)/Model.dx))-1,1:round(Geometry.l/2/Model.dy))=1;
 %center_freq = 10e6;      % [Hz]
-%bandwidth = 50;         % [%]
+%bandwidth = 95;         % [%]
 %sensor.frequency_response = [center_freq, bandwidth];
 
 input_args = { 'DataCast', 'gpuArray-single','PMLSize', 100};
