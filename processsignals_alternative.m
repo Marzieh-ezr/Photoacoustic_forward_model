@@ -60,8 +60,8 @@ Y_model=Y_model/max(Y_model(:));
 Y_exp=Geometry.a*Y_exp/max(Y_exp(:));
 
 
-[X_exp_pos, Y_exp_pos] = selectsignal(x_exp,S_exp,Geometry.distance/0.96,Geometry.cuvette_length/1.45);
-[X_model_pos, Y_model_pos] = selectsignal(x_model,S_model,Geometry.distance/0.96,Geometry.cuvette_length/1.45);
+[X_exp_pos, Y_exp_pos] = selectsignal(x_exp,S_exp,Geometry.distance/0.96,Geometry.cuvette_length/1.150);
+[X_model_pos, Y_model_pos] = selectsignal(x_model,S_model,Geometry.distance/0.96,Geometry.cuvette_length/1.150);
 %normalizing signal.
 Y_model_pos=Y_model_pos/max(Y_model_pos(:));
 Y_exp_pos=Geometry.a*Y_exp_pos/max(Y_exp_pos(:));
